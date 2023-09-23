@@ -14,6 +14,7 @@ app.use('/img', express.static(__dirname + 'public/img'))
 
 //set file routes
 require('./src/routes/home.routes')(app)
+require('./src/routes/blog.routes')(app)
 
 //set port
 const PORT = 3111
