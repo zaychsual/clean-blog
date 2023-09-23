@@ -1,6 +1,13 @@
 const express = require('express')
-
 const app = express()
+const mongoose = require('mongoose')
+
+//set connection db
+mongoose.connect('mongodb://localhost:27017/clean_blog', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // useCreateIndex: true,
+})
 
 // set directory views
 app.set('views', './src/views')
