@@ -20,5 +20,13 @@ exports.store = async (req, res) => {
 }
 
 exports.show = async (req, res) => {
-    res.render('blog/show')
+    try {
+        const id = req.params.id
+        let article = await Article.findById(id)
+        res.render('blog/show', {
+            article
+        })   
+    } catch (error) {
+        res.redirect('/')
+    }
 }
