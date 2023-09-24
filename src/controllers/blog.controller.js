@@ -10,6 +10,7 @@ exports.store = async (req, res) => {
         subtitle: req.body.subtitle,
         content: req.body.content,
     })
+    
     try {
         await article.save()
         res.redirect('/')
